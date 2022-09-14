@@ -1,5 +1,5 @@
-import cron from 'node-cron';
-import * as PocketBase from 'pocketbase';
+import * as cron from 'node-cron';
+import  PocketBase from 'pocketbase';
 const client = new PocketBase('https://funnier-backend-production.up.railway.app');
 
 let i = 0;

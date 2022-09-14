@@ -1,5 +1,11 @@
 import cron from 'node-cron';
+import PocketBase from 'pocketbase';
+const client = new PocketBase('https://funnier-backend-production.up.railway.app');
+
+let i = 0;
 
 cron.schedule(`*/1 * * * *`, async () => {
-  console.log(`running your task...`);
+  const data = { test: `Hello World ${i++}` };
+
+const record = await client.records.create('posts', data);
 });
